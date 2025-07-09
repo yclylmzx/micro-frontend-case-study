@@ -1,15 +1,16 @@
 {
   "name": "dashboard-microfrontends",
-  "version": "1.0.0",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:user-card": "npm -w user-card run dev",
+    "dev:content-bar": "npm -w content-bar run dev",
+    "dev:shell": "npm -w shell run dev",
+    "start:all": "concurrently \"npm run dev:user-card\" \"npm run dev:content-bar\" \"npm run dev:shell\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
 }

@@ -13,8 +13,8 @@ export default function Notification() {
   }
 
   return (
-    <article className="flex justify-center items-center p-4">
-      <div className="bg-white rounded-lg p-6 w-full max-w-md">
+    <article className="flex justify-center items-center xl:p-4">
+      <div className="bg-white rounded-lg p-4 xl:p-6 w-full max-w-md">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-base font-semibold text-gray-800">Bildirimler</h2>
           <button

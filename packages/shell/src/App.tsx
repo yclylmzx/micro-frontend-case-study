@@ -2,8 +2,8 @@ import { lazy, Suspense } from "react";
 import Header from "./components/Header";
 import Layout from "./components/Layout";
 
-// @ts-ignore
-const UserCard = lazy(() => import("userCard/UserCard"));
+const UserCard = lazy(() => import("userCard/UserCard")),
+  ContentBar = lazy(() => import("contentBar/ContentBar"));
 
 export default function App() {
   return (
@@ -19,15 +19,15 @@ export default function App() {
         >
           <UserCard />
         </Suspense>
-        <div className="flex-2/3">
-          <article className="p-4 border rounded-lg hover:shadow transition bg-white">
-            <h2 className="font-semibold text-lg text-gray-800 mb-1">title</h2>
-            <p className="text-sm text-gray-600 mb-2">açıklama</p>
-            <time className="text-sm text-gray-500 flex items-center gap-1">
-              {/* 📅 {new Date(data.date).toLocaleDateString("tr-TR")} */} saat
-            </time>
-          </article>
-        </div>
+        <Suspense
+          fallback={
+            <div className="flex-2/3 flex justify-center items-center">
+              Modül Yükleniyor...
+            </div>
+          }
+        >
+          <ContentBar />
+        </Suspense>
       </Layout>
     </main>
   );

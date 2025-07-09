@@ -8,10 +8,10 @@ export default defineConfig({
     react(),
     tailwindcss(),
     federation({
-      name: "shell_app",
-      remotes: {
-        userCard: "http://localhost:4173/assets/remoteEntry.js",
-        contentBar: "http://localhost:4174/assets/remoteEntry.js",
+      name: "contentBar",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./ContentBar": "./src/components/Content-Bar",
       },
       shared: ["react", "react-dom"],
     }),

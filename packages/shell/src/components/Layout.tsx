@@ -5,5 +5,9 @@ interface Layout {
 }
 
 export default function Layout({ children }: Layout) {
-  return <section className="flex gap-8 mx-16 mt-5">{children}</section>;
+  return (
+    <section className="flex md:gap-3 xl:gap-8 mx-8 xl:mx-12 mt-5 content-area">
+      {children}
+    </section>
+  );
 }

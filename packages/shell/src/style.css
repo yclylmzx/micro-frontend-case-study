@@ -5,3 +5,11 @@
   font-weight: 400;
   font-style: normal;
 }
+
+.content-area {
+  flex-direction: column;
+
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
