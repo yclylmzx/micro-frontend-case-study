@@ -8,9 +8,10 @@ export default defineConfig({
     react(),
     tailwindcss(),
     federation({
-      name: "shell_app",
-      remotes: {
-        userCard: "http://localhost:4173/assets/remoteEntry.js",
+      name: "userCard",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./UserCard": "./src/components/User-Card",
       },
       shared: ["react", "react-dom"],
     }),

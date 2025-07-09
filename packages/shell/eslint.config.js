@@ -20,6 +20,7 @@ export default defineConfig([
     rules: {
       "one-var": ["error", { initialized: "consecutive" }],
       "react/react-in-jsx-scope": "off",
+      "@typescript-eslint/ban-ts-comment": "off",
     },
   },
 ]);
